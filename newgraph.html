@@ -19,7 +19,7 @@
     <main role="main">
       <div class="container">
         <h3>your graph</h3>
-        <canvas id="myChart" width="1000" height="800"></canvas>
+        <canvas id="myChart" width="500" height="400"></canvas>
       </div>
     </main>
 
@@ -44,8 +44,8 @@
 
       $.each(data, function(key, value){
         console.log(data[key])
-        labels.push(parseInt(data[key]['Prevalence of Beaver Gene in a Population']));
-        values1.push(parseInt(data[key]['Scrubbiness']))
+        labels.push(parseInt(data[key]['prevalenceofbeavergeneinapopulation']));
+        values1.push(parseInt(data[key]['scrubbiness']))
       }
     );
     
@@ -59,6 +59,7 @@
           }
         ]
       }
+      
       var ctx = document.getElementById("myChart").getContext("2d");
       var line = new Chart(ctx).Radar(data);
     }
