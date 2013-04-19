@@ -13,7 +13,7 @@
   <body>
     <header>
       <div class="container">
-        <h1><a href="/">introduction to data visualization</a></h1>
+        <h1><a href="/">Marisa</a></h1>
       </div>
     </header>
     <main role="main">
@@ -30,7 +30,7 @@
     <script>
     
     // add your spreadsheet url
-    var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AuwSoq4skLXjdHhqb3RHeGpXdVJXMlNRcDU2c3Z3cnc&output=html';
+    var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/ccc?key=0AtYT5K7ejzp3dEdFZlQtOFhEYzNkMlJKaVZsa3VJVGc&usp=sharing';
 
     Tabletop.init({ 
       key: public_spreadsheet_url,
@@ -41,15 +41,11 @@
     function renderChart(data, tabletop) {
       var labels = [];
       var values1 = [];
-      var values2 = [];
-      var values3 = [];
 
       $.each(data, function(key, value){
         console.log(data[key])
-        labels.push(data[key]['neighborhood']);
-        values1.push(parseInt(data[key]['people']))
-        values2.push(parseInt(data[key]['people2']))
-        values3.push(parseInt(data[key]['people3']))
+        labels.push(parseInt(data[key]['Prevalence of Beaver Gene in a Population']));
+        values1.push(parseInt(data[key]['Scrubbiness']))
       }
     );
     
@@ -60,21 +56,11 @@
             fillColor : "rgba(220,220,220,0.5)",
             strokeColor : "rgba(220,220,220,1)",
             data : values1
-          },
-          {
-            fillColor : "rgba(190,205,220,0.5)",
-            strokeColor : "rgba(220,220,220,1)",
-            data : values2
-          }, 
-          {
-            fillColor : "rgba(230,210,220,0.5)",
-            strokeColor : "rgba(220,220,220,1)",
-            data : values3
           }
         ]
       }
       var ctx = document.getElementById("myChart").getContext("2d");
-      var radarChart = new Chart(ctx).Radar(data);
+      var lineChart = new Chart(ctx).Radar(data);
     }
     </script>
   </body>
