@@ -47,14 +47,14 @@
 }
 
 var url = 'http://search.twitter.com/search.json';
-var query = { q: "pizza" };
+var query = { q: "Nick Cage" };
 
 request(url, query, function(data){
   var labels = [];
   var values = [];
 
   $.each(data, function(key, value){
-    labels.push(data[key]['text']);
+    labels.push(data[key]['from*user']);
     console.log("it works");
     values.push(parseInt(data[key]['from_user_id']))
   });
