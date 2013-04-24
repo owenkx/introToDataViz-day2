@@ -54,7 +54,7 @@ request(url, query, function(data){
   var values = [];
 
   $.each(data, function(key, value){
-    labels.push(data[key]['from*user']);
+    labels.push(data[key]['from_user']);
     console.log("it works");
     values.push(parseInt(data[key]['from_user_id']))
   });
